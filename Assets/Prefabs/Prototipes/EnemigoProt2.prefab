@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &619234016994358490
+--- !u!1 &4713780218029971463
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 619234016994358495}
-  - component: {fileID: 619234016994358494}
-  - component: {fileID: 619234016994358493}
-  - component: {fileID: 619234016994358492}
-  - component: {fileID: 619234016994358491}
-  - component: {fileID: 619234016994358464}
+  - component: {fileID: 1731015263301590772}
+  - component: {fileID: 8723963733515252046}
+  - component: {fileID: 9208507929831500127}
+  - component: {fileID: 1182868824709479663}
+  - component: {fileID: 8562809109073168784}
+  - component: {fileID: 1929584943005455035}
   m_Layer: 0
-  m_Name: EnemigoProt
+  m_Name: EnemigoProt2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &619234016994358495
+--- !u!4 &1731015263301590772
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 619234016994358490}
+  m_GameObject: {fileID: 4713780218029971463}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.883, y: 6.120817, z: 2.0750923}
+  m_LocalPosition: {x: -17.37, y: 2.3, z: 12.98959}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &619234016994358494
+--- !u!33 &8723963733515252046
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 619234016994358490}
+  m_GameObject: {fileID: 4713780218029971463}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &619234016994358493
+--- !u!23 &9208507929831500127
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 619234016994358490}
+  m_GameObject: {fileID: 4713780218029971463}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 689667bed5811c848a2d737e84b3189f, type: 2}
+  - {fileID: 2100000, guid: 6b8177e1a9a551a4c9f6d3b07fe544f3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,13 +86,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &619234016994358492
+--- !u!136 &1182868824709479663
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 619234016994358490}
+  m_GameObject: {fileID: 4713780218029971463}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -100,13 +100,13 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &619234016994358491
+--- !u!54 &8562809109073168784
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 619234016994358490}
+  m_GameObject: {fileID: 4713780218029971463}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -116,16 +116,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &619234016994358464
+--- !u!114 &1929584943005455035
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 619234016994358490}
+  m_GameObject: {fileID: 4713780218029971463}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df32fab2e848c8c4687ba16d81c785dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 0
+  MoveSpeed: 5
