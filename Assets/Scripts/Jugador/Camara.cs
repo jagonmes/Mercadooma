@@ -16,7 +16,7 @@ public class Camara : MonoBehaviour
 
     void Start()
     {
-
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
 

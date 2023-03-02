@@ -259,11 +259,11 @@ MonoBehaviour:
   EnemyType3: {fileID: 8499539145782153636, guid: 1700cd2fa2edaa3489eb495d74ce2ddc, type: 3}
   EnemyType4: {fileID: 8567925883459563495, guid: 10bbe98c3d74c9f49b46089a745092ca, type: 3}
   EnemyType5: {fileID: 3995975844686800784, guid: 9cf56c019ec7c094fa46904d3c9dca2d, type: 3}
-  EnemyType1Prob: 100
-  EnemyType2Prob: 0
-  EnemyType3Prob: 0
-  EnemyType4Prob: 0
-  EnemyType5Prob: 0
+  EnemyType1Prob: 20
+  EnemyType2Prob: 20
+  EnemyType3Prob: 20
+  EnemyType4Prob: 20
+  EnemyType5Prob: 20
   SpawnRate: 3
 --- !u!135 &235842008
 SphereCollider:
@@ -653,11 +653,11 @@ MonoBehaviour:
   EnemyType3: {fileID: 8499539145782153636, guid: 1700cd2fa2edaa3489eb495d74ce2ddc, type: 3}
   EnemyType4: {fileID: 8567925883459563495, guid: 10bbe98c3d74c9f49b46089a745092ca, type: 3}
   EnemyType5: {fileID: 3995975844686800784, guid: 9cf56c019ec7c094fa46904d3c9dca2d, type: 3}
-  EnemyType1Prob: 57
-  EnemyType2Prob: 86
-  EnemyType3Prob: 28
-  EnemyType4Prob: 63
-  EnemyType5Prob: 50
+  EnemyType1Prob: 20
+  EnemyType2Prob: 20
+  EnemyType3Prob: 20
+  EnemyType4Prob: 20
+  EnemyType5Prob: 20
   SpawnRate: 3
 --- !u!1 &1218461913
 GameObject:

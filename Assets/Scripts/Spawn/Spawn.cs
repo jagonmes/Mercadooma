@@ -38,9 +38,9 @@ public class Spawn : MonoBehaviour
         float aux = EnemyType1Prob + EnemyType2Prob + EnemyType3Prob + EnemyType4Prob + EnemyType5Prob;
         EnemyType1Prob = EnemyType1Prob / aux * 100;
         EnemyType2Prob = EnemyType2Prob / aux * 100 + EnemyType1Prob;
-        EnemyType3Prob = EnemyType3Prob / aux * 100 + EnemyType1Prob;
-        EnemyType4Prob = EnemyType4Prob / aux * 100 + EnemyType1Prob;
-        EnemyType5Prob = EnemyType5Prob / aux * 100 + EnemyType1Prob;
+        EnemyType3Prob = EnemyType3Prob / aux * 100 + EnemyType2Prob;
+        EnemyType4Prob = EnemyType4Prob / aux * 100 + EnemyType3Prob;
+        EnemyType5Prob = EnemyType5Prob / aux * 100 + EnemyType4Prob;
 
         //Segun la dificultad se ajusta el número máximo de enemigos activos
         switch (Difficulty) {
