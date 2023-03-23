@@ -20,7 +20,7 @@ public class Lives : MonoBehaviour
 
             if (health <= 0f)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex );
             }
         }
 
