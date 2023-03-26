@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Lives : MonoBehaviour
+public class Health : MonoBehaviour
 {
     [SerializeField] private float StartingHealth;
-    private float health;
+    private float live;
 
-    public float Health
+    public float Live
     {
         get
         {
-            return health;
+            return live;
         }
         set
         {
-            health = value;
+            live = value;
 
-            if (health <= 0f)
+            if (live <= 0f)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex );
             }
@@ -27,7 +27,7 @@ public class Lives : MonoBehaviour
     }
     void Start()
     {
-        Health = StartingHealth;
+        Live = StartingHealth;
     }
 
 }
