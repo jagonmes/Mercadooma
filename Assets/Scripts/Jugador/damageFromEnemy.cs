@@ -17,7 +17,7 @@ public class damageFromEnemy : MonoBehaviour
         {
             if (coolDown <= 0)
             {
-                Debug.Log("Normal of the first point: " + other.gameObject.transform.forward);
+                Debug.Log("Normal of the first point: " + other.gameObject.transform.position);
                 Health.Instance.PlayerDamaged();
                 coolDown = setCoolDown;
             }

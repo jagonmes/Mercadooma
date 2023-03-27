@@ -9,7 +9,7 @@ public class Spawn : MonoBehaviour
     static public int MaxEnemies = 15;
     static public bool On = false;
 
-    [SerializeField] private int Difficulty = 0;
+    [SerializeField] public int Difficulty = 0;
 
     //Tipos de enemigos que puede invocar el spawn
     [SerializeField] private GameObject EnemyType1;
@@ -62,8 +62,10 @@ public class Spawn : MonoBehaviour
 
     void Update()
     {
+
+        float spawn = Random.Range(0f, 99f);
         //Si el spawn esta activo y esta dentro de una ventana de tiempo valida
-        if (On && Time.time > (LastSpawnTime + SpawnRate)) {
+        if (On && Time.time > (LastSpawnTime + SpawnRate) && spawn < 50f) {
 
             LastSpawnTime = Time.time;
 
