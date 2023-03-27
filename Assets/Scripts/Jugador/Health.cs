@@ -5,29 +5,73 @@ using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private float StartingHealth;
-    private float live;
+    public static Health Instance { get; private set; }
+    
+    
+    public GameObject[] vidas;
+    private int life;
+     
+        
 
-    public float Live
-    {
-        get
-        {
-            return live;
-        }
-        set
-        {
-            live = value;
 
-            if (live <= 0f)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex );
-            }
-        }
-
-    }
     void Start()
     {
-        Live = StartingHealth;
+        Instance = this;
+        life = vidas.Length; 
+    }
+
+    private void CheckLife()
+    {
+
+        if(life < 1)
+        {
+            Destroy(vidas[0].gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        }
+
+        else if(life < 2)
+        {
+            Destroy(vidas[1].gameObject);
+        }
+        else if (life < 3)
+        {
+            Destroy(vidas[2].gameObject);
+        }
+        else if (life < 4)
+        {
+            Destroy(vidas[3].gameObject);
+        }
+        else if (life < 5)
+        {
+            Destroy(vidas[4].gameObject);
+        }
+        else if (life < 6)
+        {
+            Destroy(vidas[5].gameObject);
+        }
+        else if (life < 7)
+        {
+            Destroy(vidas[6].gameObject);
+        }
+        else if (life < 8)
+        {
+            Destroy(vidas[7].gameObject);
+        }
+        else if (life < 9)
+        {
+            Destroy(vidas[8].gameObject);
+        }
+        else if (life < 10)
+        {
+            Destroy(vidas[9].gameObject);
+        }
+    }
+
+    public void PlayerDamaged()
+    {
+        life--;
+        CheckLife();
     }
 
 }
