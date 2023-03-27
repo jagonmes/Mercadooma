@@ -1322,7 +1322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   setCoolDown: 0.5
-  impactForce: 15
+  impactForce: 10
   movimiento: {fileID: 7166268769768966164}
 --- !u!114 &5063125222132301591
 MonoBehaviour:
