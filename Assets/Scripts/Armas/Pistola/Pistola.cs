@@ -8,19 +8,22 @@ public class Pistola : MonoBehaviour
     public float Range;
     private Transform PlayerCamera;
 
+    private Animator animator;
+
     public ParticleSystem Flash;
     public GameObject ImpactEffect;
 
     void Start()
     {
         PlayerCamera = Camera.main.transform;
+        animator = GetComponent<Animator>();
     }
 
    public void Shoot()
     {
         Flash.Play();
-
-        Ray bulletRay = new Ray(PlayerCamera.position, PlayerCamera.forward);
+        animator.SetTrigger("Disparo");
+        Ray bulletRay = new Ray(PlayerCamera.position + PlayerCamera.forward, PlayerCamera.forward);
         Debug.DrawRay(bulletRay.origin, bulletRay.direction * Range, Color.red, 5);
         if (Physics.Raycast(bulletRay, out RaycastHit hitInfo, Range))
         {

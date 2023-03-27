@@ -8,33 +8,46 @@ public class AI : MonoBehaviour
 {
     public NavMeshAgent navMeshAgent;
 
-    public Transform[] destinations;
+    private Vector3 destination;
    
-    public GameObject personaje;
+    private GameObject personaje;
 
-    private int i = 0;
-
+    private float alcance = 25.0f;
 
 
     void Start()
     {
-        navMeshAgent.destination = destinations[i].transform.position;  
+        personaje = GameObject.Find("Jugador");
+        destination = getRandomDestiny();
+        navMeshAgent.destination = destination;  
     }
 
     
     void Update()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, personaje.transform.position);
-        float distance = Vector3.Distance(transform.position, destinations[i].transform.position);
+        float distance = Vector3.Distance(transform.position, destination);
 
         if (distanceToPlayer < 10)
         {
             navMeshAgent.destination = personaje.transform.position;
         }
-
+        else
+        {
+            navMeshAgent.destination = destination;
+        }
         if(distance<2)
         {
-            navMeshAgent.destination = destinations[i+1].transform.position;
+            destination = getRandomDestiny();
+            navMeshAgent.destination = destination;
         }
+    }
+
+    Vector3 getRandomDestiny() {
+        Vector3 randomDirection = Random.insideUnitSphere * alcance;
+        randomDirection += transform.position;
+        NavMeshHit hit;
+        NavMesh.SamplePosition(randomDirection, out hit, alcance, 1);
+        return hit.position;
     }
 }

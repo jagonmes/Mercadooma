@@ -24,6 +24,10 @@ public class Movimiento : MonoBehaviour
 
     private Vector3 CurrentForceVelocity;
 
+    public void PhysicalHit(Vector3 fuerza) {
+        CurrentMoveVelocity += fuerza;
+    }
+
     void Start()
     {
         //Asignamos el controlador
