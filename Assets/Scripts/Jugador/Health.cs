@@ -26,8 +26,9 @@ public class Health : MonoBehaviour
         if(life < 1)
         {
             Destroy(vidas[0].gameObject);
+            //Spawn.EnemyCount = 0;
+            //activador.enemiesKilled = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
         }
 
         else if(life < 2)

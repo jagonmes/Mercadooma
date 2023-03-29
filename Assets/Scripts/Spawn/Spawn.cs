@@ -6,10 +6,9 @@ public class Spawn : MonoBehaviour
 {
     //Variables para controlar el numero de enemigos totales que existen a la vez y si los spawns estan activos
     static public int EnemyCount = 0;
-    static public int MaxEnemies = 8;
+    static public int MaxEnemies;
     static public bool On = false;
-
-    [SerializeField] public int Difficulty = 0;
+    static public int Difficulty;
 
     //Tipos de enemigos que puede invocar el spawn
     [SerializeField] private GameObject EnemyType1;
@@ -29,7 +28,7 @@ public class Spawn : MonoBehaviour
     [SerializeField] private float SpawnRate;
 
     //Tiempo desde el ultimo spawn
-    private float LastSpawnTime = 0f;
+    private float LastSpawnTime;
 
 
     void Start()
@@ -45,6 +44,7 @@ public class Spawn : MonoBehaviour
         //Segun la dificultad se ajusta el n�mero m�ximo de enemigos activos
         switch (Difficulty) {
             case 0:
+                MaxEnemies = 8;
                 break;
             case 1:
                 MaxEnemies = 15;
@@ -58,6 +58,9 @@ public class Spawn : MonoBehaviour
             default:
                 break;
         }
+
+        LastSpawnTime = Time.time;
+        Debug.Log(Difficulty);
     }
 
     void Update()
@@ -65,12 +68,13 @@ public class Spawn : MonoBehaviour
 
         float spawn = Random.Range(0f, 99f);
         //Si el spawn esta activo y esta dentro de una ventana de tiempo valida
-        if (On && Time.time > (LastSpawnTime + SpawnRate) && spawn < 50f) {
+        if (On && Time.time > (LastSpawnTime + SpawnRate)) {
 
             LastSpawnTime = Time.time;
 
             //Si hay menos enemigos que el m�ximo de enemigos
-            if (EnemyCount < MaxEnemies) {
+            if (EnemyCount < MaxEnemies && spawn < 74f)
+            {
 
                 //Se genera un n�mero aleatorio
                 float rnd = Random.Range(0f, 99f);
@@ -78,21 +82,34 @@ public class Spawn : MonoBehaviour
                 GameObject aux;
 
                 //Se elige el tipo de enemigo a invocar
-                if (rnd < EnemyType1Prob) {
+                if (rnd < EnemyType1Prob)
+                {
                     aux = EnemyType1;
-                } else if (rnd < EnemyType2Prob) {
+                }
+                else if (rnd < EnemyType2Prob)
+                {
                     aux = EnemyType2;
-                } else if (rnd < EnemyType3Prob) {
+                }
+                else if (rnd < EnemyType3Prob)
+                {
                     aux = EnemyType3;
-                } else if (rnd < EnemyType4Prob) {
+                }
+                else if (rnd < EnemyType4Prob)
+                {
                     aux = EnemyType4;
-                }else {
+                }
+                else
+                {
                     aux = EnemyType5;
                 }
 
                 Instantiate(aux, transform.position, Quaternion.identity);
 
                 EnemyCount++;
+            }
+            else 
+            {
+                LastSpawnTime = Time.time; ;
             }
         }
 

@@ -20,6 +20,8 @@ public class Entity : MonoBehaviour
             if (health <= 0f)
             {
                 Destroy(gameObject);
+                Spawn.EnemyCount--;
+                Activador.enemiesKilled++;
             }
         }
   
