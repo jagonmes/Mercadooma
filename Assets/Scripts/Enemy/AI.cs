@@ -28,7 +28,7 @@ public class AI : MonoBehaviour
         float distanceToPlayer = Vector3.Distance(transform.position, personaje.transform.position);
         float distance = Vector3.Distance(transform.position, destination);
 
-        if (distanceToPlayer < 10)
+        if (distanceToPlayer < 50)
         {
             navMeshAgent.destination = personaje.transform.position;
         }

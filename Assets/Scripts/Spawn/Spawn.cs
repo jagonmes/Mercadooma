@@ -6,7 +6,7 @@ public class Spawn : MonoBehaviour
 {
     //Variables para controlar el numero de enemigos totales que existen a la vez y si los spawns estan activos
     static public int EnemyCount = 0;
-    static public int MaxEnemies = 15;
+    static public int MaxEnemies = 8;
     static public bool On = false;
 
     [SerializeField] public int Difficulty = 0;
@@ -34,7 +34,7 @@ public class Spawn : MonoBehaviour
 
     void Start()
     {
-        //Se normaliza la probabilidad de aparición de cada tipo de enemigo
+        //Se normaliza la probabilidad de apariciï¿½n de cada tipo de enemigo
         float aux = EnemyType1Prob + EnemyType2Prob + EnemyType3Prob + EnemyType4Prob + EnemyType5Prob;
         EnemyType1Prob = EnemyType1Prob / aux * 100;
         EnemyType2Prob = EnemyType2Prob / aux * 100 + EnemyType1Prob;
@@ -42,7 +42,7 @@ public class Spawn : MonoBehaviour
         EnemyType4Prob = EnemyType4Prob / aux * 100 + EnemyType3Prob;
         EnemyType5Prob = EnemyType5Prob / aux * 100 + EnemyType4Prob;
 
-        //Segun la dificultad se ajusta el número máximo de enemigos activos
+        //Segun la dificultad se ajusta el nï¿½mero mï¿½ximo de enemigos activos
         switch (Difficulty) {
             case 0:
                 break;
@@ -69,10 +69,10 @@ public class Spawn : MonoBehaviour
 
             LastSpawnTime = Time.time;
 
-            //Si hay menos enemigos que el máximo de enemigos
+            //Si hay menos enemigos que el mï¿½ximo de enemigos
             if (EnemyCount < MaxEnemies) {
 
-                //Se genera un número aleatorio
+                //Se genera un nï¿½mero aleatorio
                 float rnd = Random.Range(0f, 99f);
 
                 GameObject aux;
