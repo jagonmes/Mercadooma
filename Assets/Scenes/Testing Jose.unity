@@ -253,7 +253,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b71d67ea288a9c4e81753dddbb7ab4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Difficulty: 2
   EnemyType1: {fileID: 16912678558721186, guid: cf1c6024e8482f743b6ba6c80245220b, type: 3}
   EnemyType2: {fileID: 4713780218029971463, guid: 8b838a0676758da49b087c8439c17a80, type: 3}
   EnemyType3: {fileID: 8499539145782153636, guid: 1700cd2fa2edaa3489eb495d74ce2ddc, type: 3}
