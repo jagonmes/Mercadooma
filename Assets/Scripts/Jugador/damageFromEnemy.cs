@@ -38,7 +38,9 @@ public class damageFromEnemy : MonoBehaviour
     }
 
     void Update() {
-        coolDown -= Time.deltaTime;
-
+        if (!MenuPausa.juegoPausado)
+        {
+            coolDown -= Time.deltaTime;
+        }
     }
 }

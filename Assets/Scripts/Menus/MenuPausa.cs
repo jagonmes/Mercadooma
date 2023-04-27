@@ -10,11 +10,11 @@ public class MenuPausa : MonoBehaviour
 
     [SerializeField] private GameObject menuPausa;
 
-    private bool juegoPausado = false;
+    public static bool juegoPausado = false;
     
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Alpha0))
         {
             if(juegoPausado)
             {
@@ -22,7 +22,7 @@ public class MenuPausa : MonoBehaviour
             }
             else
             {
-              Pausa();
+                Pausa();
             
             }
             

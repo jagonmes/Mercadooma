@@ -22,6 +22,7 @@ public class Camara : MonoBehaviour
 
     void Update()
     {
+        if (!MenuPausa.juegoPausado) {
             //Leer X e Y del ratón
             Vector2 MouseInput = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
@@ -36,9 +37,6 @@ public class Camara : MonoBehaviour
             transform.eulerAngles = new Vector3(0f, XYRotation.y, 0f);
             //Giramos la camara (vertical)
             PlayerCamera.localEulerAngles = new Vector3(XYRotation.x, 0f, 0f);
-       
-            
-            
-        
+        }
     }
 }

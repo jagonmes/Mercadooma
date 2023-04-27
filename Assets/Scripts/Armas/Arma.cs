@@ -18,27 +18,31 @@ public class Arma : MonoBehaviour
 
     void Update()
     {
-        if (Auto) 
+        if (!MenuPausa.juegoPausado)
         {
-            if (Input.GetMouseButton(0))
+            if (Auto)
             {
-                if (CoolDown <= 0f)
+                if (Input.GetMouseButton(0))
                 {
-                    OnGunShoot?.Invoke();
-                    CoolDown = FireCoolDown;
+                    if (CoolDown <= 0f)
+                    {
+                        OnGunShoot?.Invoke();
+                        CoolDown = FireCoolDown;
+                    }
                 }
             }
-        }else 
-        {
-            if (Input.GetMouseButtonDown(0))
+            else
             {
-                if (CoolDown <= 0f)
+                if (Input.GetMouseButtonDown(0))
                 {
-                    OnGunShoot?.Invoke();
-                    CoolDown = FireCoolDown;
+                    if (CoolDown <= 0f)
+                    {
+                        OnGunShoot?.Invoke();
+                        CoolDown = FireCoolDown;
+                    }
                 }
             }
+            CoolDown -= Time.deltaTime;
         }
-        CoolDown -= Time.deltaTime;
     }
 }
