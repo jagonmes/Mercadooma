@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class MenuInicial : MonoBehaviour
 {
+
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
+    }
+
     public void Jugar()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

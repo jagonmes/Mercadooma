@@ -32,6 +32,7 @@ public class MenuPausa : MonoBehaviour
 
     public void Pausa()
     {
+        Cursor.visible = true;
         juegoPausado = true;
         Time.timeScale = 0f;
         botonPausa.SetActive(true);
@@ -40,6 +41,7 @@ public class MenuPausa : MonoBehaviour
    
     public void Reanudar()
      {
+        Cursor.visible = false;
         juegoPausado = false;
         Time.timeScale = 1f;
         botonPausa.SetActive(false);
