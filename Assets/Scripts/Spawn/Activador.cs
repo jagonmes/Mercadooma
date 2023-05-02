@@ -35,7 +35,13 @@ public class Activador : MonoBehaviour
 
     void Update() 
     {
-        if(enemiesKilled >= enemyGoal)
-            SceneManager.LoadScene(1);
+        if(enemiesKilled >= enemyGoal){
+            if(SceneManager.GetActiveScene().buildIndex==2){
+                SceneManager.LoadScene(3);
+            }
+            if(SceneManager.GetActiveScene().buildIndex==3){
+                SceneManager.LoadScene(1);
+            }
+        }
     }
 }
