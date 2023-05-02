@@ -17,7 +17,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Testing Jose.unity
     guid: 478a63c703b625747b82e85c9dee21a2
-  - enabled: 1
-    path: Assets/Scenes/Testing Cris.unity
-    guid: b22efb9b711c7024b93c6f96c641fcf5
   m_configObjects: {}
