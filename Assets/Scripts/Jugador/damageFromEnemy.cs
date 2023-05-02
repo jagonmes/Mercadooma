@@ -37,10 +37,20 @@ public class damageFromEnemy : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("EnemyBullet"))
+        {
+            Health.Instance.PlayerDamaged();
+        }
+    }
+
     void Update() {
         if (!MenuPausa.juegoPausado)
         {
             coolDown -= Time.deltaTime;
         }
     }
+
+     
 }
