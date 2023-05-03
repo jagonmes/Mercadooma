@@ -36,7 +36,7 @@ public class damageFromEnemy : MonoBehaviour
             movimiento.PhysicalHit(other.gameObject.transform.forward * impactForce);
         }
     }
-
+    
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("EnemyBullet"))
@@ -44,7 +44,7 @@ public class damageFromEnemy : MonoBehaviour
             Health.Instance.PlayerDamaged();
         }
     }
-
+    
     void Update() {
         if (!MenuPausa.juegoPausado)
         {

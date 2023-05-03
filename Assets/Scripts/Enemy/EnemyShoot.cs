@@ -15,6 +15,7 @@ public class EnemyShoot : MonoBehaviour
     {
         playerPosition = GameObject.Find("Jugador").transform;
 
+
         Invoke("ShootPlayer", 3);
     }
 
@@ -26,9 +27,9 @@ public class EnemyShoot : MonoBehaviour
 
     void ShootPlayer()
     {
-        Vector3 playerDirection = playerPosition.position - transform.position;
+        Vector3 playerDirection = playerPosition.position - new Vector3(0,1.0f,0)- transform.position;
         GameObject newBullet;
-
+        Debug.Log(playerDirection);
         newBullet = Instantiate(enemyBullet, spawnBulletPoint.position, spawnBulletPoint.rotation);
 
         newBullet.GetComponent<Rigidbody>().AddForce(playerDirection*bulletvelocity,ForceMode.Force);
