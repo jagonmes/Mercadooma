@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -14,6 +15,8 @@ public class MenuPausa : MonoBehaviour
 
     public Image bSonido;
     public Image bMusica;
+
+    public AudioMixer audioMixer;
 
     public Sprite soundOn;
     public Sprite soundOff;
@@ -76,24 +79,32 @@ public class MenuPausa : MonoBehaviour
 
     public void botonSonido() 
     {
+        
         if (bSonido.sprite == soundOn)
         {
+
+            audioMixer.SetFloat("soundVolume", -80);
             bSonido.sprite = soundOff;
         }
         else 
         {
+            audioMixer.SetFloat("soundVolume", 0);
             bSonido.sprite = soundOn;
         }
     }
 
     public void botonMusica() 
     {
+      
         if (bMusica.sprite == soundOn)
         {
+            audioMixer.SetFloat("musicVolume", -80);
             bMusica.sprite = soundOff;
         }
         else
         {
+
+            audioMixer.SetFloat("musicVolume", 0);
             bMusica.sprite = soundOn;
         }
     }
